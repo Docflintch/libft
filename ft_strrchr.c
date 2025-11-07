@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:43:31 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 17:34:01 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/07 17:11:46 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/07 17:33:48 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
 	int	bol;
+	int	len;
 
-	i = 0;
 	bol = 0;
-	while (bol == 0 && s[i])
+	len = ft_strlen(s);
+	while (bol == 0 && len != 0)
 	{
-		if (s[i] == c)
+		if (s[len] == c)
 			bol = 1;
-		i++;
+		len--;
 	}
 	if (bol == 1)
-		return((char *)&s[i - 1]);
+		return((char *)&s[len + 1]);
 	return(NULL);
 }
 
-int	main(void)
-{
-	const char *s = "je veux que zle pc tourne a fond et il ne frise pas avec spotify";
-	printf("%s\n%s\n\n\n", ft_strchr(s, 'z'), strchr(s, 'z'));
-	printf("%s\n%s\n", ft_strchr(s, 'p'), strchr(s, 'p'));
-}
+// int	main(void)
+// {
+// 	const char *s = "je veux que zle pc tourne a fond et il ne frise zpas avec spotify";
+// 	printf("%s\n%s\n\n\n", ft_strrchr(s, 'z'), strrchr(s, 'z'));
+// 	printf("%s\n%s\n", ft_strrchr(s, 'p'), strrchr(s, 'p'));
+// }
