@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 13:53:20 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/05 17:03:47 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/07 16:43:31 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/07 17:11:26 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*change;
-	size_t	i;
+	int	i;
+	int	bol;
 
-	change = (unsigned char *)s;
 	i = 0;
-	while (n != i)
+	bol = 0;
+	while (bol == 0 && s[i])
 	{
-		change[i] = c;
+		if (s[i] == c)
+			bol = 1;
 		i++;
 	}
-	return(s);
+	if (bol == 1)
+		return((char *)&s[i - 1]);
+	return(NULL);
 }
 
 // int	main(void)
 // {
-// 	char txt[] = "je veux copier tod :|";
-// 	char txt2[] = "je veux copier tod :|";
-
-// 	ft_memset(&txt[8], '!', 6);
-// 	memset(&txt2[8], '!', 6);
-// 	printf("%s\t", txt);
-// 	printf("%s\n", txt2);
+// 	const char *s = "je veux que zle pc tourne a fond et il ne frise pas avec spotify";
+// 	printf("%s\n%s\n\n\n", ft_strchr(s, 'z'), strchr(s, 'z'));
+// 	printf("%s\n%s\n", ft_strchr(s, 'p'), strchr(s, 'p'));
 // }

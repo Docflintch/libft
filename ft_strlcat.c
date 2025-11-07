@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 13:18:53 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 11:26:11 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/07 11:25:05 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/07 16:02:28 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest , const char *src , size_t size )
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	len;
 
 	i = 0;
-	while (size > i+1)
+	len = ft_strlen(dst);
+	if (size < len)
+		return((ft_strlen(src) + (len - (len - size))));
+	while ((size - len) > i+1)
 	{
-		dest[i] = src[i];
+		dst[len+i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	dst[len+i] = '\0';
+	return((ft_strlen(src) + len));
 }
 
 // int	main(void)
 // {
 // 	char original[] = "je veux du chocolat noir tkt";
-// 	char coppy[24];
-// 	printf("%zu %s\n", ft_strlcpy(coppy , original , 0), coppy);
+// 	char *coppy = malloc(sizeof(char)*21);
+// 	ft_memset(coppy, 't', 4);
+// 	printf("%zu %s\n", ft_strlcat(coppy , original , 18), coppy);
 // 	char original2[] = "je veux du chocolat noir tkt";
-// 	char coppy2[24];
-// 	printf("%zu %s\n", strlcpy(coppy2 , original2 , 0), coppy2);
+// 	char *coppy2 = malloc(sizeof(char)*21);
+// 	ft_memset(coppy2, 't', 4);
+// 	printf("%zu %s\n", strlcat(coppy2 , original2 , 18), coppy2);
+// 	free(coppy);
+// 	free(coppy2);
 // }

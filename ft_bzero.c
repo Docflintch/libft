@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:43:26 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/05 14:58:46 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:04:04 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsined char	*cast;
-	int	i;
+	unsigned char	*cast;
+	size_t	i;
 
 	i = 0;
-	cast = (unsined char *)s;
+	cast = (unsigned char *)s;
 	while (i != n)
 	{
 		cast[i] = '\0';
