@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 13:11:35 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/03 17:41:42 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/08 16:38:34 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/08 18:54:40 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(int *str)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	nb;
+	size_t	i;
 	int	total;
 
 	i = 0;
-	nb = 1;
 	total = 0;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (n >= i && s1[i] && s2[i])
 	{
-		if (str[i] == '-')
-			nb = -1;
+		if (s1[i] != s2[i])
+			total = total + (s1[i] - s2[i]);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		total = total * 10 + str[i] - '0';
-		i++;
-	}
-	return (total * nb);
+	if ((!s1[i] || !s2[i]) && n != i)
+		total = total + (s1[i] - s2[i]);
+	return(total);
 }
+
+// int	main(void)
+// {
+// 	char *test = "testr";
+// 	char *test2 = "test";
+// 	size_t	i;
+
+// 	i = 5;
+// 	printf("%d\t %d\n", ft_strncmp(test, test2, i), strncmp(test, test2, i));
+// }

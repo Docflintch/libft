@@ -1,38 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_srtrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:11:46 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 17:11:49 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/08 17:14:30 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/08 18:24:53 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 	int	bol;
+	unsigned char *s2;
 
 	i = 0;
 	bol = 0;
-	while (bol == 0 && s[i])
+	s2 = (unsigned char *)s;
+	while (bol == 0 && s2[i] && i < n)
 	{
-		if (s[i] == c)
+		if (s2[i] == c)
 			bol = 1;
 		i++;
 	}
 	if (bol == 1)
-		return((char *)&s[i - 1]);
+		return((void *)&s2[i - 1]);
 	return(NULL);
 }
 
 // int	main(void)
 // {
-// 	const char *s = "je veux que zle pc tourne a fond et il ne frise pas avec spotify";
-// 	printf("%s\n%s\n\n\n", ft_strchr(s, 'z'), strchr(s, 'z'));
-// 	printf("%s\n%s\n", ft_strchr(s, 'p'), strchr(s, 'p'));
+// 	unsigned char s[]= "je ne z sais pas";
+// 	void *v1;
+// 	void *v2;
+
+// 	v1=ft_memchr(s, 'z', 50);
+// 	v2=memchr(s, 'z', 50);
+// 	printf("%s\t%s\n",(char *)v1 ,(char *)v2);
 // }

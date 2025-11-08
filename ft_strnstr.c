@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 13:53:20 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/08 16:45:13 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/08 19:07:56 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/08 19:50:25 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*change;
 	size_t	i;
+	size_t	y;
+	int	bol;
 
-	change = (unsigned char *)s;
 	i = 0;
-	while (n != i)
+	bol = 0;
+	while (i < len && big[i] && little[y] && bol == 0)
 	{
-		change[i] = c;
-		i++;
+		y = 0;
+		while (big[i + y] == little[y])
+			y++;
+		if (y == ft_strlen(little))
+			bol = 1;
 	}
-	return(s);
+	if (bol == 1)
+		return ((char *)&big[i]);
+	return(NULL);
 }
 
-// int	main(void)
-// {
-// 	char txt[] = "je veux copier tod :|";
-// 	char txt2[] = "je veux copier tod :|";
-
-// 	ft_memset(&txt[8], '!', 6);
-// 	memset(&txt2[8], '!', 6);
-// 	printf("%s\t", txt);
-// 	printf("%s\n", txt2);
-// }
+int	main(void)
+{
+	printf("%s\t%s\n", ft_strnstr("Foo Bar Baz", "Bar", 7), strnstr("Foo Bar Baz", "Bar", 7));
+}

@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:43:31 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 17:34:01 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:45:05 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_strchr(const char *s, int c)
 	return(NULL);
 }
 
-int	main(void)
-{
-	const char *s = "je veux que zle pc tourne a fond et il ne frise pas avec spotify";
-	printf("%s\n%s\n\n\n", ft_strchr(s, 'z'), strchr(s, 'z'));
-	printf("%s\n%s\n", ft_strchr(s, 'p'), strchr(s, 'p'));
-}
+// int	main(void)
+// {
+// 	const char *s = "je veux que zle pc tourne a fond et il ne frise pas avec spotify";
+// 	printf("%s\n%s\n\n\n", ft_strchr(s, 'z'), strchr(s, 'z'));
+// 	printf("%s\n%s\n", ft_strchr(s, 'p'), strchr(s, 'p'));
+// }
