@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:38:34 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/08 18:54:40 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:13:59 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	int	total;
+	int		total;
 
 	i = 0;
 	total = 0;
@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if ((!s1[i] || !s2[i]) && n != i)
 		total = total + (s1[i] - s2[i]);
-	return(total);
+	return (total);
 }
 
 // int	main(void)

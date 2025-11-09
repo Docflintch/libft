@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:05:12 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/04 16:35:29 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:05:58 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int print)
 {
-	return((print >= 32 && print <= 126));
+	return ((print >= 32 && print <= 126));
 }
 // int	main(void)
 // {

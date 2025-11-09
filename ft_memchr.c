@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:14:30 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/08 18:24:53 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:14:23 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	int	bol;
-	unsigned char *s2;
+	size_t			i;
+	int				bol;
+	unsigned char	*s2;
 
 	i = 0;
 	bol = 0;
 	s2 = (unsigned char *)s;
+	if (!s2)
+		return (NULL);
 	while (bol == 0 && s2[i] && i < n)
 	{
 		if (s2[i] == c)
@@ -28,17 +30,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	if (bol == 1)
-		return((void *)&s2[i - 1]);
-	return(NULL);
+		return ((void *)&s2[i - 1]);
+	return (NULL);
 }
 
 // int	main(void)
 // {
-// 	unsigned char s[]= "je ne z sais pas";
+// 	unsigned char s[]= "je ne sais z pas quoi ecrire";
 // 	void *v1;
 // 	void *v2;
 
 // 	v1=ft_memchr(s, 'z', 50);
 // 	v2=memchr(s, 'z', 50);
-// 	printf("%s\t%s\n",(char *)v1 ,(char *)v2);
+// 	printf("%s\t%s\n",(char *)v1 , (char *)v2);
 // }

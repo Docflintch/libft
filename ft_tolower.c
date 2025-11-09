@@ -6,13 +6,13 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:43 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 16:40:52 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:11:15 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int	c)
+int	ft_tolower(int c)
 {
 	if (c <= 'Z' && c >= 'A')
 		return (c + 32);

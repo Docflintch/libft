@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:11:35 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/04 15:54:16 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:18:41 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@ int	ft_atoi(const char *str)
 	}
 	return (total * nb);
 }
-
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <stdlib.h>
 
 // int	main(void)
 // {

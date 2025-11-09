@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:37:30 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/05 19:11:39 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:08:56 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*cast_dest;
+	unsigned char		*cast_dest;
 	const unsigned char	*cast_src;
-	size_t	i;
+	size_t				i;
 
 	i = 0;
 	cast_dest = (unsigned char *)dest;
 	cast_src = (const unsigned char *)src;
-	while(n != i)
+	if (!cast_dest || !cast_dest)
+		return (NULL);
+	while (n != i)
 	{
 		cast_dest[i] = cast_src[i];
 		i++;

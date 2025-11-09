@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:43:37 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 11:12:29 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:09:37 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*cast_dest;
+	unsigned char		*cast_dest;
 	const unsigned char	*cast_src;
-	size_t	i;
+	size_t				i;
 
 	i = 0;
 	cast_dest = (unsigned char *)dest;
 	cast_src = (const unsigned char *)src;
+	if (!cast_dest || !cast_dest)
+		return (NULL);
 	if (dest > src)
 	{
-		while(n--)
+		while (n--)
 			cast_dest[n] = cast_src[n];
 	}
 	else
 	{
-		while(n != i)
+		while (n != i)
 		{
 			cast_dest[i] = cast_src[i];
 			i++;

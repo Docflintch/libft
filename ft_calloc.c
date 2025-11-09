@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:43:26 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/09 19:11:07 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/09 18:37:13 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/09 19:19:07 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*cast;
-	size_t			i;
+	void	*cal;
 
-	i = 0;
-	cast = (unsigned char *)s;
-	while (i < n)
-	{
-		cast[i] = '\0';
-		i++;
-	}
+	cal = malloc(nmemb * size);
+	ft_bzero(cal, (nmemb * size));
+	return (cal);
 }
 
 // int	main(void)
 // {
-// 	char	test[] = NULL;
-// 	char	test2[] = NULL;
+// 	char	*test;
+// 	int	i;
 
-// 	ft_bzero(test, 9);
+// 	i = 0;
+// 	test = ft_calloc(sizeof(char),4);
+// 	while(i < 1)
+// 	{
+// 		test[i] = 'u';
+// 		i++;
+// 	}
 // 	printf("%s\n", test);
-// 	bzero(test2, 9);
-// 	printf("%s\n", test2);
+// 	free(test);
 // }

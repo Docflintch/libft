@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 13:18:53 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/09 17:06:32 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/09 19:17:02 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/09 19:30:52 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size )
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*dup;
+	int		i;
 
+	if (!s)
+		return (NULL);
+	dup = ft_calloc(sizeof(const char *), ft_strlen(s));
 	i = 0;
-	while (size > i + 1)
+	while (s[i])
 	{
-		dest[i] = src[i];
+		dup[i] = s[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	return (dup);
 }
 
 // int	main(void)
 // {
-// 	char original[] = "je veux du chocolat noir tkt";
-// 	char coppy[24];
-// 	printf("%zu %s\n", ft_strlcpy(coppy , original , 0), coppy);
-// 	char original2[] = "je veux du chocolat noir tkt";
-// 	char coppy2[24];
-// 	printf("%zu %s\n", strlcpy(coppy2 , original2 , 0), coppy2);
+// 	char	*base = "t";
+// 	char	*coppy;
+// 	coppy = ft_strdup(base);
+// 	printf("%s\n", coppy);
+// 	free(coppy);
+// 	// coppy = strdup(base);
+// 	// printf("%s\n", coppy);
+// 	// free(coppy);
 // }

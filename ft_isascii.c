@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:05:12 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/04 16:19:38 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:05:12 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int ascii)
 {
-	return((ascii >= 0 && ascii <= 127));
+	return ((ascii >= 0 && ascii <= 127));
 }
 // int	main(void)
 // {

@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:27:14 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/04 16:16:49 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 16:58:50 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	return((ft_isalpha(c) || ft_isdigit(c)));
+	return ((ft_isalpha(c) || ft_isdigit(c)));
 }
 
 // int	main(void)
@@ -40,4 +40,6 @@ int	ft_isalnum(int c)
 // 	printf("%d\n", isalnum('\n'));
 // 	printf("%d\t\t", ft_isalnum(' '));
 // 	printf("%d\n", isalnum(' '));
+// 	printf("%d\t\t", ft_isalnum(NULL));
+// 	printf("%d\n", isalnum(NULL));
 // }

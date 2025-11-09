@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:25:05 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 16:02:28 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:10:16 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	len = ft_strlen(dst);
 	if (size < len)
-		return((ft_strlen(src) + (len - (len - size))));
-	while ((size - len) > i+1)
+		return ((ft_strlen(src) + (len - (len - size))));
+	while ((size - len) > i + 1)
 	{
-		dst[len+i] = src[i];
+		dst[len + i] = src[i];
 		i++;
 	}
-	dst[len+i] = '\0';
-	return((ft_strlen(src) + len));
+	dst[len + i] = '\0';
+	return ((ft_strlen(src) + len));
 }
 
 // int	main(void)

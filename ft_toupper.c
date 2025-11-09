@@ -6,13 +6,13 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:29:40 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/07 16:40:01 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:11:08 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int	c)
+int	ft_toupper(int c)
 {
 	if (c <= 'z' && c >= 'a')
 		return (c - 32);
