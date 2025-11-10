@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 18:37:13 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/10 13:56:28 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/10 14:26:16 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/10 16:58:49 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	void	*cal;
+	char	*s_return;
+	size_t	i;
 
-	cal = malloc(nmemb * size);
-	if (!cal)
+	if (!s)
 		return (NULL);
-	if (nmemb * size > 2147483647)
+	s_return= ft_calloc(sizeof(char *), len);
+	if (!s_return)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		free(cal);
-		return(NULL);
+		s_return[i] = s[start + i];
+		i++;
 	}
-	ft_bzero(cal, (nmemb * size));
-	return (cal);
+	return (s_return);
 }
 
 // int	main(void)
 // {
-// 	char	*test;
-// 	int	i;
-
-// 	i = 0;
-// 	test = ft_calloc(sizeof(char),4);
-// 	while(i < 1)
-// 	{
-// 		test[i] = 'u';
-// 		i++;
-// 	}
-// 	printf("%s\n", test);
-// 	free(test);
+// 	printf("%s\n", ft_substr(NULL, 3, 7));
 // }
