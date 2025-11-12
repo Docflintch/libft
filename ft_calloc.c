@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 18:37:13 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/10 13:56:28 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/12 04:32:49 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb * size > 2147483647)
 	{
 		free(cal);
-		return(NULL);
+		return (NULL);
 	}
 	ft_bzero(cal, (nmemb * size));
 	return (cal);

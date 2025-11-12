@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 14:26:16 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/11 15:25:21 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/12 03:24:43 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/12 03:39:36 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s_return;
-	size_t	i;
+	long	stokage[100000];
+	long	i;
+	int		final;
+	long	nb;
 
-	if (!s)
-		return (NULL);
-	s_return = ft_calloc(sizeof(char *), len);
-	if (!s_return)
-		return (NULL);
+	nb = n;
 	i = 0;
-	while (i < len)
+	if (nb < 0)
 	{
-		s_return[i] = s[start + i];
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	while (nb >= 10 || nb <= -10)
+	{
+		stokage[i] = nb % 10;
+		nb = nb / 10;
 		i++;
 	}
-	return (s_return);
+	stokage[i] = nb;
+	while (i >= 0)
+	{
+		final = stokage[i] + '0';
+		write(fd, &final, 1);
+		i--;
+	}
 }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_substr(NULL, 3, 7));
-// }

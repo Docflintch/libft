@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:11:46 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/12 01:46:29 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/12 03:16:58 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/12 03:35:16 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	bol;
-	int	len;
-
-	bol = 0;
-	len = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	while (bol == 0 && len != 0)
+	while (*s)
 	{
-		if (s[len] == c)
-			bol = 1;
-		len--;
+		write(fd, &*s, 1);
+		s++;
 	}
-	if (bol == 1)
-		return ((char *)&s[len + 1]);
-	return (NULL);
 }
 
 // int	main(void)
 // {
-// 	const char *s = "wje veux que zle pc tourne a z fond";
-// 	printf("%s\n%s\n\n", ft_strrchr(s, '0'), strrchr(s, '0'));
-// 	printf("%s\n%s\n", ft_strrchr(s, 'p'), strrchr(s, 'p'));
+// 	ft_putstr_fd("lol", 1);
 // }

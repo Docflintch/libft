@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 17:11:46 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/12 01:46:29 by enchueco         ###   ########.fr       */
+/*   Created: 2025/11/12 00:21:53 by enchueco          #+#    #+#             */
+/*   Updated: 2025/11/12 03:33:46 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	bol;
-	int	len;
+	char	*total;
+	int		i;
 
-	bol = 0;
-	len = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	while (bol == 0 && len != 0)
+	total = ft_calloc(sizeof(char), ft_strlen(s));
+	i = 0;
+	while (s[i])
 	{
-		if (s[len] == c)
-			bol = 1;
-		len--;
+		total[i] = f(i, s[i]);
+		i++;
 	}
-	if (bol == 1)
-		return ((char *)&s[len + 1]);
-	return (NULL);
+	return (total);
 }
+
+// char	tkt(unsigned int i, char s)
+// {
+// 	return (s+i);
+// }
 
 // int	main(void)
 // {
-// 	const char *s = "wje veux que zle pc tourne a z fond";
-// 	printf("%s\n%s\n\n", ft_strrchr(s, '0'), strrchr(s, '0'));
-// 	printf("%s\n%s\n", ft_strrchr(s, 'p'), strrchr(s, 'p'));
+// 	printf("%s\n", ft_strmapi("je ne sais pas danser", tkt));
 // }

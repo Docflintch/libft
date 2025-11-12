@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:57:43 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/10 19:41:37 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:25:31 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*total;
 
 	if (!s1 && !s2)
-		return(NULL);
+		return (NULL);
 	if (!s1)
 		total = ft_calloc(sizeof(char), ft_strlen(s2) + 1);
 	else if (!s2)
