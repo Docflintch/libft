@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 23:19:58 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/12 05:43:17 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:20:02 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ char	*ft_itoa(int n)
 	return (total);
 }
 
-int	main(void)
-{
-	printf("%s\n", ft_itoa(+129));
-	printf("%s\n", ft_itoa(1));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-0));
-	printf("%s\n", ft_itoa(-1));
-	printf("%s\n", ft_itoa(-129));
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(2147483647));
-}
+// int	main(void)
+// {
+// 	printf("%s\n", ft_itoa(+129));
+// 	printf("%s\n", ft_itoa(1));
+// 	printf("%s\n", ft_itoa(0));
+// 	printf("%s\n", ft_itoa(-0));
+// 	printf("%s\n", ft_itoa(-1));
+// 	printf("%s\n", ft_itoa(-129));
+// 	printf("%s\n", ft_itoa(-2147483648));
+// 	printf("%s\n", ft_itoa(2147483647));
+// }

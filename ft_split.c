@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:41:15 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/12 05:42:36 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/13 13:19:42 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,20 @@ char	**ft_split(char const *s, char c)
 	return (tab_final);
 }
 
-// int	main(void)
-// {
-// 	char	**tabstr;
-// 	int		i;
+int	main(void)
+{
+	char	**tabstr;
+	int		i;
 
-// 	i = 0;
-// 	 if (!(tabstr = ft_split(NULL, ' ')))
-//         printf("%s\n","NULL");
-//     else
-//     {
-//         while (tabstr[i] != NULL)
-//         {
-//             printf("[%s]\n", tabstr[i]);
-//             i++;
-//         }
-//     }
-// }
+	i = 0;
+	 if (!(tabstr = ft_split(NULL, ' ')))
+        printf("%s\n","NULL");
+    else
+    {
+        while (tabstr[i] != NULL)
+        {
+            printf("[%s]\n", tabstr[i]);
+            i++;
+        }
+    }
+}
