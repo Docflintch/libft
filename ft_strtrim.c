@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 18:33:12 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/11 15:30:48 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:42:12 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	verif(char s1, char const *set)
 {
-	int	bol;
 	int	i;
 
-	bol = 0;
 	i = 0;
 	while (set[i++])
 	{
