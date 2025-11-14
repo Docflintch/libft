@@ -6,7 +6,7 @@
 /*   By: enchueco <enchueco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 18:28:15 by enchueco          #+#    #+#             */
-/*   Updated: 2025/11/09 17:14:59 by enchueco         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:36:32 by enchueco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	total = 0;
 	string1 = (unsigned char *)s1;
 	string2 = (unsigned char *)s2;
-	while (n > i && string1[i] && string2[i])
+	while (n > i)
 	{
 		if (string1[i] != string2[i])
 			total = total + (string1[i] - string2[i]);
